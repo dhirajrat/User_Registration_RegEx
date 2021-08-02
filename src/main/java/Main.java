@@ -31,5 +31,13 @@ public class Main {
             validName = RegexCheckingOperations.emailValidationChecking(email);
         }
         while (validName == false);
+
+        //Mobile Number input
+        do {
+            System.out.printf("Enter a Mobile Number of User: ");
+            String mNum = sc.nextLine();
+            validName = RegexCheckingOperations.mNumValidationChecking(mNum);
+        }
+        while (validName == false);
     }
 }

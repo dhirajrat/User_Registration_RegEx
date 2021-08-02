@@ -32,4 +32,20 @@ public class RegexCheckingOperations {
         }
         return validation;
     }
+
+    /**
+     * Mobile Number Validation checking
+     * @param name
+     * @return
+     */
+    public static boolean mNumValidationChecking(String name){
+        boolean validation = Pattern.matches("^[1-9][0-9]+[ ]{0,1}+[1-9][0-9]{9}$",name);  //[[a-z]{3,}][.]?[[a-z]{3,}]?[@]
+        if(validation){
+            System.out.println(name+" is Valid mobile Number");
+        }
+        else {
+            System.out.println(name+" is Invalid mobile Number");
+        }
+        return validation;
+    }
 }
