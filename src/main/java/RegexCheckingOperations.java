@@ -55,7 +55,7 @@ public class RegexCheckingOperations {
      * @return
      */
     public static boolean passwordValidationChecking(String name){
-        boolean validation = Pattern.matches("(?=.*[a-z]).{8,}",name);
+        boolean validation = Pattern.matches("(?=.*[a-z])(?=.*[A-Z]).{8,}",name);
         if(validation){
             System.out.println(name+" is Valid Password");
         }
