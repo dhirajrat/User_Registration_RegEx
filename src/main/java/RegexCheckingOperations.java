@@ -48,4 +48,20 @@ public class RegexCheckingOperations {
         }
         return validation;
     }
+
+    /**
+     * Password Validation method
+     * @param name
+     * @return
+     */
+    public static boolean passwordValidationChecking(String name){
+        boolean validation = Pattern.matches("(?=.*[a-z]).{8,}",name);
+        if(validation){
+            System.out.println(name+" is Valid Password");
+        }
+        else {
+            System.out.println(name+" is Invalid Password");
+        }
+        return validation;
+    }
 }

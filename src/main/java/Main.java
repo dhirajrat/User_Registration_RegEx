@@ -39,5 +39,13 @@ public class Main {
             validName = RegexCheckingOperations.mNumValidationChecking(mNum);
         }
         while (validName == false);
+
+        //Password input
+        do {
+            System.out.printf("Enter a Password of User: ");
+            String password = sc.nextLine();
+            validName = RegexCheckingOperations.passwordValidationChecking(password);
+        }
+        while (validName == false);
     }
 }
