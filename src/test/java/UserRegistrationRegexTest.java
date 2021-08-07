@@ -2,76 +2,69 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class UserRegistrationRegexTest {
+
+    // True Username value Testing
     @Test
-    public void testFirstNameValidation(){
-        try {
+    public void testFirstNameValidation() throws InvalidUserInputException {
+
             String firstName = "Dhiraj";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
-        }
-        catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // False Username value testing
     @Test
-    public void testFalseFirstNameValidationWithSmallCapStart(){
-        try {
+    public void testFalseFirstNameValidationWithSmallCapStart() throws InvalidUserInputException {
+
             String firstName = "dhiraj";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
-        }
-        catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // True Lastname value Testing
     @Test
-    public void testLastNameValidation(){
-        try {
+    public void testLastNameValidation() throws InvalidUserInputException {
+
             String lastName = "Rathod";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(lastName));
-        }catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // Null Value Testing For First name
     @Test
-    public void testEmailValidation(){
-        try {
+    public void testPasswordValidationWithNull() throws InvalidUserInputException {
+
+        String password = null;
+        Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
+    }
+
+    // Email Validation True Value Testing
+    @Test
+    public void testEmailValidation() throws InvalidUserInputException {
+
             String email = "abc.xyz@bl.co.in";
             Assertions.assertEquals(true,RegexCheckingOperations.emailValidationChecking(email));
-        }catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // Phone Number Valid Value Testing
     @Test
-    public void testPhoneValidation(){
-        try {
+    public void testPhoneValidation() throws InvalidUserInputException {
+
             String pNum = "91 9604508795";
             Assertions.assertEquals(true,RegexCheckingOperations.mNumValidationChecking(pNum));
-        }
-        catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // Password Validation Testing
     @Test
-    public void testPasswordValidation(){
-        try{
+    public void testPasswordValidation() throws InvalidUserInputException {
+
             String password = "sdkk#as5dlG";
             Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
-        }catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
     }
 
+    // False Value Password Validation Testing
     @Test
-    public void testPasswordValidationWithNull(){
-        try{
-            String password = null;
-            Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
-        }catch (InvalidUserInputException e){
-            System.out.println(e.getMessage());
-        }
+    public void testFalsePasswordValidation() throws InvalidUserInputException {
+
+        String password = "sdkkaslG";
+        Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
     }
+
 }
