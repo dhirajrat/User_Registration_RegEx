@@ -5,7 +5,18 @@ public class UserRegistrationRegexTest {
     @Test
     public void testFirstNameValidation(){
         try {
-            String firstName = null;
+            String firstName = "Dhiraj";
+            Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
+        }
+        catch (Exception e){
+            System.out.println("Enter valid details");
+        }
+    }
+
+    @Test
+    public void testFalseFirstNameValidationWithSmallCapStart(){
+        try {
+            String firstName = "dhiraj";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
         }
         catch (Exception e){
