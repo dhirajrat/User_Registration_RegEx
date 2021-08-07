@@ -4,7 +4,7 @@ import java.util.Scanner;
  *  Main Class
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidUserInputException {
         Scanner sc = new Scanner(System.in);
         Scanner ch = new Scanner(System.in);
         boolean validName;

@@ -8,8 +8,8 @@ public class UserRegistrationRegexTest {
             String firstName = "Dhiraj";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
         }
-        catch (Exception e){
-            System.out.println("Enter valid details");
+        catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -19,8 +19,8 @@ public class UserRegistrationRegexTest {
             String firstName = "dhiraj";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(firstName));
         }
-        catch (Exception e){
-            System.out.println("Enter valid details");
+        catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -29,8 +29,8 @@ public class UserRegistrationRegexTest {
         try {
             String lastName = "Rathod";
             Assertions.assertEquals(true, RegexCheckingOperations.usernameValidationChecking(lastName));
-        }catch (Exception e){
-            System.out.println("Enter valid details");
+        }catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -39,8 +39,8 @@ public class UserRegistrationRegexTest {
         try {
             String email = "abc.xyz@bl.co.in";
             Assertions.assertEquals(true,RegexCheckingOperations.emailValidationChecking(email));
-        }catch (Exception e){
-            System.out.println("Enter valid details");
+        }catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -50,8 +50,8 @@ public class UserRegistrationRegexTest {
             String pNum = "91 9604508795";
             Assertions.assertEquals(true,RegexCheckingOperations.mNumValidationChecking(pNum));
         }
-        catch (Exception e){
-            System.out.println("Enter valid details");
+        catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -60,8 +60,8 @@ public class UserRegistrationRegexTest {
         try{
             String password = "sdkk#as5dlG";
             Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
-        }catch (Exception e){
-            System.out.println("Enter valid details");
+        }catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -70,8 +70,8 @@ public class UserRegistrationRegexTest {
         try{
             String password = null;
             Assertions.assertEquals(true,RegexCheckingOperations.passwordValidationChecking(password));
-        }catch (Exception e){
-            System.out.println("Enter valid details");
+        }catch (InvalidUserInputException e){
+            System.out.println(e.getMessage());
         }
     }
 }
