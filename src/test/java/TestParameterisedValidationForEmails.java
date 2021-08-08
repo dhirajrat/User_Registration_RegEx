@@ -36,7 +36,7 @@ public class TestParameterisedValidationForEmails {
     }
 
     /**
-     * Collection Of data we required
+     * Collection Of data we required for Parameterized Testing
      * @return
      */
     @Parameterized.Parameters
